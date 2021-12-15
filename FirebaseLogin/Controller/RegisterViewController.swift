@@ -14,7 +14,8 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +36,7 @@ class RegisterViewController: UIViewController {
                     print(e.localizedDescription)
                 }
                 else {
-                    self.performSegue(withIdentifier: "registerToChat", sender: self)
+                    self.performSegue(withIdentifier: K.registerSegue, sender: self)
                     
                 }
                 // ...

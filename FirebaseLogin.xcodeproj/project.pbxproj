@@ -22,6 +22,8 @@
 		3C43DBB527668FF1008A689A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43DBB427668FF1008A689A /* RegisterViewController.swift */; };
 		3C43DBB727669006008A689A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43DBB627669006008A689A /* LoginViewController.swift */; };
 		3C43DBB927669014008A689A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C43DBB827669014008A689A /* ChatViewController.swift */; };
+		3CB6042B27684A6E007D5300 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6042A27684A6E007D5300 /* K.swift */; };
+		3CB60437276A53BD007D5300 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB60436276A53BD007D5300 /* Message.swift */; };
 		7013D5ABA21DA2B07F8D03BC /* Pods_FirebaseLogin_FirebaseLoginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACECFC2E90C325B8E0F482A /* Pods_FirebaseLogin_FirebaseLoginUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		3C43DBB427668FF1008A689A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3C43DBB627669006008A689A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C43DBB827669014008A689A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		3CB6042A27684A6E007D5300 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		3CB60436276A53BD007D5300 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		46A35ED3C580EF1E54D52FDC /* Pods-FirebaseLoginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLoginTests.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseLoginTests/Pods-FirebaseLoginTests.debug.xcconfig"; sourceTree = "<group>"; };
 		831FD6F4C43BDF99BE400178 /* Pods-FirebaseLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLogin.release.xcconfig"; path = "Target Support Files/Pods-FirebaseLogin/Pods-FirebaseLogin.release.xcconfig"; sourceTree = "<group>"; };
 		94C771BDC32E2F2563BCED5D /* Pods_FirebaseLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,7 @@
 			children = (
 				3C43DB7627666217008A689A /* AppDelegate.swift */,
 				3C43DB7827666217008A689A /* SceneDelegate.swift */,
+				3CB6042927684A40007D5300 /* Model */,
 				3C43DBAE2766893C008A689A /* Controller */,
 				3C43DBAF27668959008A689A /* View */,
 				3C43DB7F2766621E008A689A /* Assets.xcassets */,
@@ -180,6 +185,15 @@
 				3C43DB7C27666217008A689A /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3CB6042927684A40007D5300 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CB6042A27684A6E007D5300 /* K.swift */,
+				3CB60436276A53BD007D5300 /* Message.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8282D834EA5CB605B25B0894 /* Pods */ = {
@@ -436,9 +450,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C43DB7B27666217008A689A /* ViewController.swift in Sources */,
+				3CB6042B27684A6E007D5300 /* K.swift in Sources */,
 				3C43DB7727666217008A689A /* AppDelegate.swift in Sources */,
 				3C43DB7927666217008A689A /* SceneDelegate.swift in Sources */,
 				3C43DBB727669006008A689A /* LoginViewController.swift in Sources */,
+				3CB60437276A53BD007D5300 /* Message.swift in Sources */,
 				3C43DBB927669014008A689A /* ChatViewController.swift in Sources */,
 				3C43DBB527668FF1008A689A /* RegisterViewController.swift in Sources */,
 			);

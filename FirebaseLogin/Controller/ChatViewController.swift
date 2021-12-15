@@ -6,16 +6,181 @@
 //
 
 import UIKit
-
+import Firebase
+let db = Firestore.firestore()
 class ChatViewController: UIViewController {
 
+
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    let db = Firestore.firestore()
+    var messages : [Message] = [Message(sender: "1@1", body: "Hi"),Message(sender: "2@2.com", body: "Hey")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.dataSource = self
+        
+        navigationItem.hidesBackButton = true
+        title = "Chat Screen"
+        loadData()
         // Do any additional setup after loading the view.
+        
+    }
+    func loadData() {
+        
+        
+
+               db.collection("NewMessages").order(by: "date").addSnapshotListener { (querySnapshot, error) in
+
+                   
+
+                   
+
+                   self.messages = []
+
+                   if let e = error {
+
+                       print("Unable to retrieve")
+
+                   }
+
+                   
+
+                   else {
+
+                       
+
+                       if let snapshotDocuments = querySnapshot?.documents{
+
+                         
+
+                           for doc in snapshotDocuments {
+
+                               
+
+                               print(doc.data())
+
+                               
+
+                               let data = doc.data()
+
+                               
+
+                               if let messageSender = data["sender"] as? String, let messageBody = data["body"] as? String
+
+                               {
+
+                                   
+
+                                   let newMessage = Message(sender: messageSender, body: messageBody)
+
+                                   
+
+                                   self.messages.append(newMessage)
+
+                                       
+
+                                       
+
+                                   self.tableView.reloadData()
+
+                                       
+
+                                   
+
+                               }
+
+                           }
+
+                       }
+                   }
+
+        
+               }
+        
+    }
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if let messagSender = Auth.auth().currentUser?.email,   let messageBody = textField.text
+
+              
+
+           
+
+              {
+
+                  
+
+                  
+
+                  db.collection("NewMessages").addDocument(data: [
+
+
+
+                      "sender" : messagSender,
+
+                      "body" : messageBody,
+
+                      "date" : Date().timeIntervalSince1970
+
+                  
+
+                  
+
+                  ]) { (error) in
+
+                      
+
+                      
+
+                      
+
+                      if let e = error {
+
+                          
+
+                          print("Unsuccessful")
+
+                      }
+
+                      
+
+                      else {
+
+                          
+
+                          print("Successful")
+
+                      }
+
+                      
+
+                  }
+
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+
+              }
+
+              
+
+              
+
+              
+        
+        
     }
     
-
+    
     /*
     // MARK: - Navigation
 
@@ -25,5 +190,46 @@ class ChatViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+  
+   
+    @IBAction func unwind(segue : UIStoryboardSegue){
+            
+        }
+    
+    @IBAction func signoutPressed(_ sender: Any) {
+        do {
+          try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+            
+            
+            
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+        
+    }
+}
 
+extension ChatViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+        return messages.count
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
+        
+        cell.textLabel?.text = messages[indexPath.row].body
+        return cell
+        
+        
+    }
+    
+    
+    
 }

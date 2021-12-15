@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
-    
+
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
                     print(e.localizedDescription)
                 }
                 else{
-                    self.performSegue(withIdentifier: "loginToChat", sender: self)
+                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
                 }
                 // ...
             }
