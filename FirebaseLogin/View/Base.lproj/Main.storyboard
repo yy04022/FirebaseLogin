@@ -173,16 +173,6 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="680"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="67" id="gew-Jh-07p">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="67"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gew-Jh-07p" id="926-TM-g3W">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLV-eF-sQk">
                                 <rect key="frame" x="20" y="795" width="275" height="42"/>
@@ -208,7 +198,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Sign Out" id="9rV-th-Fe8">
                             <connections>
                                 <action selector="signoutPressed:" destination="FXS-qp-Mcn" id="kpB-8e-WNe"/>
-                                <segue destination="dbz-9U-R0v" kind="unwind" unwindAction="unwindWithSegue:" id="MZr-ZE-mTr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -218,7 +207,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQV-yP-g21" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="dbz-9U-R0v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1776.8115942028987" y="-224.33035714285714"/>
         </scene>

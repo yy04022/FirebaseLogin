@@ -21,6 +21,7 @@ class ChatViewController: UIViewController {
         
         tableView.dataSource = self
         
+        tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         navigationItem.hidesBackButton = true
         title = "Chat Screen"
         loadData()
@@ -192,9 +193,7 @@ class ChatViewController: UIViewController {
     */
   
    
-    @IBAction func unwind(segue : UIStoryboardSegue){
-            
-        }
+
     
     @IBAction func signoutPressed(_ sender: Any) {
         do {
@@ -221,10 +220,23 @@ extension ChatViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let message = messages[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)as!
+            MessageCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
+        cell.label.text = message.body
         
-        cell.textLabel?.text = messages[indexPath.row].body
+        if message.sender == Auth.auth().currentUser?.email{
+            cell.meImage.isHidden = false
+            cell.youImage.isHidden = true
+        }
+        else {
+            cell.meImage.isHidden = true
+            cell.youImage.isHidden = false
+            
+        }
+        
+        
         return cell
         
         

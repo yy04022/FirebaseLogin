@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" id="KGk-i7-Jjw" customClass="MessageCell" customModule="FirebaseLogin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyc-rW-2Xk">
+                        <rect key="frame" x="10" y="10" width="300" height="40"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HpP-bx-ffb">
+                                <rect key="frame" x="0.0" y="1.5" width="40" height="37.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="26o-Hx-zKb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Bk9-qw-cuN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="fsV-yt-Vse"/>
+                                    <constraint firstAttribute="width" constant="40" id="qVz-I7-pZ9"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AB5-Jv-OeB">
+                                <rect key="frame" x="40" y="0.0" width="220" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LD-hN-sdT">
+                                        <rect key="frame" x="8" y="0.0" width="202" height="30"/>
+                                        <color key="backgroundColor" red="0.64566439109999996" green="0.66421595209999995" blue="0.97477359809999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6LD-hN-sdT" secondAttribute="trailing" constant="10" id="3jb-5q-sRr"/>
+                                    <constraint firstItem="6LD-hN-sdT" firstAttribute="leading" secondItem="AB5-Jv-OeB" secondAttribute="leading" constant="8" id="6Wt-oX-qho"/>
+                                    <constraint firstItem="6LD-hN-sdT" firstAttribute="top" secondItem="AB5-Jv-OeB" secondAttribute="top" id="EO4-Xi-pmG"/>
+                                    <constraint firstAttribute="bottom" secondItem="6LD-hN-sdT" secondAttribute="bottom" constant="10" id="Jj0-yr-F4O"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jVX-LN-oYV">
+                                <rect key="frame" x="260" y="1.5" width="40" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2OK-YS-Bo1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6ih-cf-Giw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="EHF-06-zQu"/>
+                                    <constraint firstAttribute="width" constant="40" id="SxM-3F-jNO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jVX-LN-oYV" firstAttribute="leading" secondItem="AB5-Jv-OeB" secondAttribute="trailing" id="7cQ-60-Xy1"/>
+                            <constraint firstAttribute="bottom" secondItem="AB5-Jv-OeB" secondAttribute="bottom" id="Oi7-lQ-2LN"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gyc-rW-2Xk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="1Ay-v8-cfJ"/>
+                    <constraint firstItem="gyc-rW-2Xk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3hb-gR-ofQ"/>
+                    <constraint firstAttribute="bottom" secondItem="gyc-rW-2Xk" secondAttribute="bottom" constant="10" id="E3s-wC-lc7"/>
+                    <constraint firstAttribute="trailing" secondItem="gyc-rW-2Xk" secondAttribute="trailing" constant="10" id="aKa-tV-ukN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="label" destination="6LD-hN-sdT" id="bId-rE-xcL"/>
+                <outlet property="meImage" destination="jVX-LN-oYV" id="fPc-Zr-xh8"/>
+                <outlet property="messageBubble" destination="AB5-Jv-OeB" id="02V-1k-GhI"/>
+                <outlet property="youImage" destination="HpP-bx-ffb" id="4xy-Vp-NEE"/>
+            </connections>
+            <point key="canvasLocation" x="103" y="78"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
